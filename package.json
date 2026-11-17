@@ -1,0 +1,80 @@
+{
+  "name": "dsh-qwen-reasoning",
+  "version": "0.1.0",
+  "description": "DSH (DeepSeek Harness) plugin: enable the full Qwen reasoning-effort set (off/minimal/low/medium/high/xhigh/max) on your qwen providers and default to max, so the reasoning bar exposes every level and reasoning_effort is sent to the Qwen gateway. Additive, idempotent, preserves your existing config.",
+  "icon": "assets/qwen-reasoning.svg",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "files": [
+    "assets/*.svg",
+    "locale/*.json",
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "harness",
+    "cordis",
+    "cordis-plugin",
+    "qwen",
+    "qianwenai",
+    "reasoning",
+    "reasoning-effort",
+    "thinking",
+    "llm",
+    "plugin"
+  ],
+  "engines": {
+    "node": ">=18",
+    "dsh": ">=0.1.0-rc.1 <0.3.0-0"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasocheung/dsh-qwen-reasoning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jasocheung/dsh-qwen-reasoning/issues"
+  },
+  "homepage": "https://github.com/jasocheung/dsh-qwen-reasoning#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
+    },
+    "catalog": {
+      "category": "llm",
+      "summary": {
+        "en": "Enable the full Qwen reasoning-effort set (off/minimal/low/medium/high/xhigh/max) on your qwen providers and default to max. Additive and idempotent — your existing providers and choices are preserved.",
+        "zh": "为你的 qwen 提供商启用完整推理档位（off/minimal/low/medium/high/xhigh/max）并默认 max。加法、幂等写入，保留你已有的提供商与配置。"
+      },
+      "capabilities": [
+        "full qwen reasoning-effort levels",
+        "default reasoning effort = max",
+        "additive idempotent config enhancement",
+        "settings configuration card",
+        "/qwen-reasoning chat command"
+      ]
+    }
+  }
+}
