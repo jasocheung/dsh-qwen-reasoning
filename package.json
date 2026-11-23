@@ -1,6 +1,6 @@
 {
   "name": "dsh-qwen-reasoning",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH (DeepSeek Harness) plugin: enable the full Qwen reasoning-effort set (off/minimal/low/medium/high/xhigh/max) on your qwen providers and default to max, so the reasoning bar exposes every level and reasoning_effort is sent to the Qwen gateway. Additive, idempotent, preserves your existing config.",
   "icon": "assets/qwen-reasoning.svg",
   "type": "module",
